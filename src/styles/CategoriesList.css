@@ -2,10 +2,10 @@
 
 .categories-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 170px);
   gap: 5px;
+  grid-template-columns: repeat(auto-fill,160px);
+  justify-content: space-evenly;
   position: relative;
-  justify-content: space-between;
 }
 
 .category-container {
@@ -32,9 +32,4 @@
   margin-right: 8px;
   width: 8px;
   height: 8px;
-}
-@media (min-width: 320px) {
-  .categories-list {
-    grid-template-columns: repeat(auto-fill, 130px);
-  }
 }

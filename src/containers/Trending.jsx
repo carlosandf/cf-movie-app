@@ -8,8 +8,7 @@ const API = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`
 
 function Trending() {
 
-  const movies = useGetMovies(API)
-  console.log(movies)
+  const movies = useGetMovies(API);
   return(
     <section id="trendingPreview" className="trendingPreview-container">
       <div className="trendingPreview-header">
