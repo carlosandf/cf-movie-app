@@ -13,13 +13,15 @@ module.exports = {
     filename: "[name].[contenthash].js",
     clean: true,
   },
-  mode: "production",
   resolve: {
-    extensions: [".js", "jsx"],
+    extensions: [".js", ".jsx"],
     alias: {
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@components': path.resolve(__dirname, 'src/components/'),
+      '@containers': path.resolve(__dirname, 'src/containers/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
     }
   },
   module: {

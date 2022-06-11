@@ -1,0 +1,25 @@
+@import 'global.css';
+
+.genericList-container {
+  align-items: center;
+  display: grid;
+  gap: 8PX;
+  grid-template-columns: repeat(auto-fill,140px);
+  justify-content: center;
+  justify-items: center;
+  padding: 32px 10px;
+}
+
+.genericList-container .movie-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.genericList-container .movie-img {
+  width: 100%;
+}
+
+.inactive {
+  display: none;
+}
+
