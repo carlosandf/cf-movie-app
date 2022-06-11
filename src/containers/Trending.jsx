@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Movie from '@components/Movie';
 import '@styles/Trending.css';
-import getTrendingPreview from '@hooks/getTrendingPreview';
+import useGetMovies from '@hooks/useGetMovies';
+import API_KEY from "@utils/api_key";
+
+const API = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 
 function Trending() {
-  // const [data, setData] = useState('')
 
-  // setData(getTrendingPreview())
-
+  const movies = useGetMovies(API)
+  console.log(movies)
   return(
     <section id="trendingPreview" className="trendingPreview-container">
       <div className="trendingPreview-header">
@@ -15,14 +17,14 @@ function Trending() {
         <button className="trendingPreview-btn">Ver más</button>
       </div>
       <article className="trendingPreview-movieList">
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
+        {
+          movies.map(movie => (
+            <Movie 
+              image={movie.poster_path}
+              name={movie.original_title}
+              key={movie.id} />
+          ))
+        }
       </article>
     </section>
   );

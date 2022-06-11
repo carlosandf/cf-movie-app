@@ -1,15 +1,15 @@
 @import 'global.css';
 
 .categories-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 170px);
+  gap: 5px;
   position: relative;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .category-container {
-  width: 45%;
+  width: 100%;
 }
 
 .category-title {
@@ -32,4 +32,9 @@
   margin-right: 8px;
   width: 8px;
   height: 8px;
+}
+@media (min-width: 320px) {
+  .categories-list {
+    grid-template-columns: repeat(auto-fill, 130px);
+  }
 }
