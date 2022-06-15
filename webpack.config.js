@@ -22,6 +22,7 @@ module.exports = {
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
     }
   },
   module: {
@@ -100,5 +101,14 @@ module.exports = {
       new CssMinimizerPlugin(),
       new TerserPlugin(),
     ]
+  },
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist')
+    },
+    compress: true,
+    port: '3005',
+    historyApiFallback: true,
   }
 }

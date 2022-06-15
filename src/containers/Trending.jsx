@@ -1,14 +1,12 @@
 import React from 'react';
 import Movie from '@components/Movie';
 import '@styles/Trending.css';
-import useGetMovies from '@hooks/useGetMovies';
-import API_KEY from "@utils/api_key";
+import { useGetMovies } from '@hooks/useGetData';
 
-const API = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-
+const endpoint = 'trending/movie/day';
 function Trending() {
 
-  const movies = useGetMovies(API);
+  const movies = useGetMovies(endpoint);
   return(
     <section id="trendingPreview" className="trendingPreview-container">
       <div className="trendingPreview-header">

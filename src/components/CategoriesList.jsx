@@ -1,19 +1,17 @@
 import React from 'react';
 import CategoryItem from './CategoryItem';
-import useGetCategories from "@hooks/useGetCategories";
-import API_KEY from '@utils/api_key';
 import '@styles/CategoriesList.css';
+import { useGetCategories } from '../hooks/useGetData';
 
-const API = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
-
+const endpoint = 'genre/movie/list'
 function CategoriesList() {
 
-  const categories = useGetCategories(API)
-  console.log(categories)
+  const genres = useGetCategories(endpoint);
+  
   return (
     <article className="categories-list">
       {
-        categories.map(category => (
+        genres.map(category => (
           <CategoryItem 
             key={category.id}
             name={category.name}

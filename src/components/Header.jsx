@@ -1,7 +1,7 @@
 import React from 'react';
 import '@styles/Header.css';
 
-function Header() {
+function Header({modifier}) {
   return (
     <header id="header" className="header-container">
       <span className="header-arrow inactive">&lt;</span>

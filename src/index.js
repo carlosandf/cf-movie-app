@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from '@pages/App';
+import App from './routes/App';
 //import getTrendingPreview from './hooks/getTrendingPreview';
 
 
