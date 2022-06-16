@@ -3,14 +3,13 @@ import '@styles/Header.css';
 import Form from './Form';
 import { Link } from 'react-router-dom';
 
-function Header({modifier, title}) {
+function Header({arrow, logo, form, title, name}) {
 
-  const view = modifier
   
   return (
     <header id="header" className="header-container">
       {
-        view ?
+        arrow ?
           (
             <Link to="/">
               <span className="header-arrow">&lt;</span>
@@ -18,10 +17,9 @@ function Header({modifier, title}) {
           ) 
         : null
       }
-      {view && <h2 className="header-title header-title--categoryView">{title}</h2>}
-
-      {!view && <h1 className="header-title">CFMovies</h1>}
-      {!view && <Form />}
+      {logo && <h1 className="header-title">CFMovies</h1>}
+      {form && <Form />}
+      {title && <h2 className="header-title header-title--categoryView">{name}</h2>}
     </header>
   );
 }

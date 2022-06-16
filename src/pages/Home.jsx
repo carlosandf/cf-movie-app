@@ -7,7 +7,10 @@ import CategoriesPreview from '@containers/CategoriesPreview';
 export default function Home() {
   return (
     <React.StrictMode>
-      <Header modifier={false} />
+      <Header
+        logo={true}
+        form={true}
+      />
       <Trending />
       <CategoriesPreview />
       <Footer />

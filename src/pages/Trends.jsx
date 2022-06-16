@@ -10,7 +10,11 @@ export default function Trends() {
 
   return (
     <>
-      <Header modifier={true} title='Tendencias' />
+      <Header 
+        arrow={true}
+        title={true}
+        name='Tendencias'
+      />
       <GenericList data={trends} />
     </>
   )
